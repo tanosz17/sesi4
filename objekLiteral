@@ -1,0 +1,31 @@
+let student = {
+    name: "Andi",
+    age: 17,
+    address: {
+        street: "Cisaat",   // Tanda koma ditambahkan
+        city: "Sukabumi",   // Tanda koma ditambahkan
+        prov: "Jawa Barat"   // Tanda koma tidak diperlukan di sini
+    },
+    infoStudent: function() {
+        return `${this.name} ${this.age} ${this.address.street}, ${this.address.city}, ${this.address.prov}`; // Menggunakan 'this'
+    }
+};
+
+console.log(student.name);
+console.log(student.age);
+console.log(student.address);
+
+// Menambah key dan value
+student['id_number'] = 11;
+console.log(student);
+
+// Mengubah Value
+student["age"] = 22;
+console.log(student);
+
+// Menghapus key dan value
+delete student['id_number'];
+console.log(student);
+
+console.log(student.infoStudent());
+console.log(student.address.street);
