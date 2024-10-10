@@ -1,0 +1,53 @@
+let dataMahasiswa = [
+    {
+        nim : 1,
+        umur : 20,
+        nama :"Lunskuy",
+        java : 80,
+        python : 40,
+        c : 90
+    },
+    {
+        nim : 2,
+        umur : 21,
+        nama :"Budskuy",
+        java : 75,
+        python : 30,
+        c : 90
+    }
+]
+
+console.log(dataMahasiswa[0])
+console.log(dataMahasiswa[1])
+
+dataMahasiswa.push({nim:3,umur:22,nama:"Cika", java:10, python:40, c:20})
+
+console.log(dataMahasiswa[2])
+
+let bigJava = ""
+let java_score = 0
+
+for(let i = 0; i<dataMahasiswa.length;i++){
+    if(dataMahasiswa[i]["java"] > java_score){
+        java_score = dataMahasiswa[i]["java"]
+        bigJava = dataMahasiswa[i]["nama"]
+    }
+}
+
+console.log(`Nilai java terbesar adalah : ${bigJava} ${java_score}`)
+
+let over20 = dataMahasiswa.filter(mahasiswa =>  mahasiswa.umur > 20)
+console.log(over20);
+
+let nama = dataMahasiswa.map(mahasiswa => mahasiswa.nama)
+console.log(nama)
+
+let total_java =
+dataMahasiswa.reduce((sum, mahasiswa)=> sum + mahasiswa.java, 0)
+
+console.log(total_java);
+
+let meanJava = total_java / dataMahasiswa.length
+console.log(`Total nilai java : ${total_java}`);
+console.log(`Jumlah Siswa : ${dataMahasiswa.length}`);
+console.log(`Rata rata : ${meanJava}`);
